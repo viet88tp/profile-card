@@ -1,0 +1,97 @@
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: hsl(185, 75%, 39%);
+  height: 100vh;
+  background-image: url("images/bg-pattern-top.svg"),
+    url("images/bg-pattern-bottom.svg");
+  background-repeat: no-repeat;
+  /* background position: top image, bottom image */
+  /* moving view width and view height away from those directions */
+  /* must specify height to keep images inside view*/
+  background-position: right 52vw bottom 38vh, left 49vw top 51vh;
+  font-family: "Kumbh Sans", sans-serif;
+}
+
+.profile-box {
+  /* position:absolute changes this to an inline item, cannot use margin:auto */
+  /* margin:auto only works on block items */
+  /* text-align only works if the parent is a block item and child is inline, text-align:center is applied to the parent element*/
+  background-color: white;
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  left: 50%;
+  top: 50%;
+  /* can use this to center block because we know the height */
+  /* margin-top: -175px;
+  margin-left: -175px; */
+  /* but we can also do this in one line */
+  transform: translate(-50%, -50%);
+  border-radius: 5%;
+  overflow: hidden;
+  /* text-align: center; */
+}
+
+.profile-pic {
+  /* images are inline blocks */
+  position: absolute;
+  border-radius: 50%;
+  border-style: solid;
+  border-color: white;
+  border-width: 5px;
+  /* need to use this to center image because we don't know dimensions */
+  left: 50%;
+  top: 25%;
+  /* moves the image right 50% and then move it back 50% of the picture */
+  transform: translateX(-50%);
+}
+
+.name-container {
+  position: absolute;
+  width: 350px;
+  text-align: center;
+  bottom: 30%;
+}
+
+.stat-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 350px;
+  transform: translateX(-50%);
+  border-top: solid;
+  padding: 30px;
+  text-align: center;
+}
+
+.count {
+  font-weight: 700;
+}
+
+.name {
+  font-weight: 700;
+  padding: 10px;
+}
+
+.age {
+  font-weight: 400;
+}
+
+.subtext {
+  font-weight: 400;
+  font-size: 0.7em;
+}
+
+/* use flex for creating columns and row, good for aligning text content into table-like configuration
+
+use position:absolute with top/bottom and transform to move images around, easiest way*/
